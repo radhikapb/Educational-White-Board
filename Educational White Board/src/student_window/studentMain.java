@@ -1,0 +1,233 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package student_window;
+
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
+/**
+ *
+ * @author shraddha
+ */
+public class studentMain extends javax.swing.JFrame implements Runnable{
+
+    /**
+     * Creates new form studentMain
+     */
+    
+   
+    
+    public studentMain() {
+        initComponents();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
+            int width = (int) screensize.getWidth();
+            int height = (int) screensize.getHeight();
+            this.setBounds(0, 0, width, (int)(4*height/5));
+            toFront();
+            
+            //initialize();
+            /*        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            @Override
+            public void run() {
+                
+               // BufferedImage img;
+                String img;
+                ImageIcon icon;
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(studentMain.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                while(true){
+                    try {
+                        Thread.sleep(1000);
+                         img = ewb.EWB.is.recv_img();
+                          byte[] bytearray = Base64.decode(img);
+                        System.out.println(bytearray);
+                        if (bytearray!=null){
+                            BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytearray));
+                            if(img!=null){
+                                icon = new ImageIcon(imag);
+                            }
+                            else{
+                                icon = new ImageIcon("Images/background.jpg");
+                            }
+                            studentMain.img_lbl.setIcon(icon);
+                        }
+                        //ImageIO.write(imag, "jpg", new File(dirName1,"snap.jpg"));
+                        else{
+                            icon = new ImageIcon("Images/background.jpg");
+                            studentMain.img_lbl.setIcon(icon);
+                        }
+                        
+                        
+                    } catch (InterruptedException | IOException ex) {
+                        Logger.getLogger(studentMain.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                    
+                }
+            }
+        });
+         
+        
+        // BufferedImage img;
+                String img;
+                ImageIcon icon;
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(studentMain.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                while(true){
+                    try {
+                        Thread.sleep(1000);
+                         img = ewb.EWB.is.recv_img();
+                          byte[] bytearray = Base64.decode(img);
+                        System.out.println(bytearray);
+                        if (bytearray!=null){
+                            BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytearray));
+                            if(img!=null){
+                                icon = new ImageIcon(imag);
+                            }
+                            else{
+                                icon = new ImageIcon("Images/background.jpg");
+                            }
+                            studentMain.img_lbl.setIcon(icon);
+                        }
+                        //ImageIO.write(imag, "jpg", new File(dirName1,"snap.jpg"));
+                        else{
+                            icon = new ImageIcon("Images/background.jpg");
+                            studentMain.img_lbl.setIcon(icon);
+                        }
+                        
+                        
+                    } catch (InterruptedException | IOException ex) {
+                        Logger.getLogger(studentMain.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                    
+                }
+                * 
+                */
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        img_lbl = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+
+        img_lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(img_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(img_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /*
+         * Set the Nimbus look and feel
+         */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the
+         * default look and feel. For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(studentMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /*
+         * Create and display the form
+         */
+
+        
+    }
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    static javax.swing.JLabel img_lbl;
+    // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+        this.setVisible(true);
+                String img;
+                ImageIcon icon;
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(studentMain.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                while(true){
+                    try {
+                        Thread.sleep(1000);
+                         img = ewb.EWB.is.recv_img();
+                          byte[] bytearray = Base64.decode(img);
+                        System.out.println(bytearray);
+                        if (bytearray!=null){
+                            BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytearray));
+                            if(img!=null){
+                                icon = new ImageIcon(imag);
+                            }
+                            else{
+                                icon = new ImageIcon("Images/background.jpg");
+                            }
+                            studentMain.img_lbl.setIcon(icon);
+                        }
+                        //ImageIO.write(imag, "jpg", new File(dirName1,"snap.jpg"));
+                        else{
+                            icon = new ImageIcon("Images/background.jpg");
+                            studentMain.img_lbl.setIcon(icon);
+                        }
+                        
+                        
+                    } catch (InterruptedException | IOException ex) {
+                        Logger.getLogger(studentMain.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                    
+                }   
+    }
+}
